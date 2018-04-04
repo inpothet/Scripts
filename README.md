@@ -1,5 +1,5 @@
 # Scripts
-All scripts Written for my job/Internship
+All scripts i have use from time to time
 
 ## Scripts:
 * mysqlb.sh - Backup all databases
