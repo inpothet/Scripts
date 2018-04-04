@@ -8,8 +8,8 @@
 
 # Setting the main CLI passed paramters to mandatory.
 param (
-    [Parameter(Mandatory=$true)][string]$number,
-    [Parameter(Mandatory=$true)][string]$data
+    [Parameter(Mandatory=$false)][string]$number,
+    [Parameter(Mandatory=$false)][string]$data
  )
 
 
@@ -24,3 +24,11 @@ function check_passprase{
 function find_user {
  
  }
+
+# Generate a 12 character password using the following characters: "!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_abcdefghijklmnopqrstuvwxyz{|}~0123456789"
+function create_password{
+$Password = ([char[]]([char]33..[char]95) + ([char[]]([char]97..[char]126)) + 0..9 | sort {Get-Random})[0..12] -join ''
+echo $Password
+}
+
+create_password
