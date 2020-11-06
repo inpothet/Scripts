@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import smtplib
 import cgi
-
+form = cgi.FieldStorage()
 
 sender = "A Test User <from@example.com>"
 receiver = form.getvalue('email')
